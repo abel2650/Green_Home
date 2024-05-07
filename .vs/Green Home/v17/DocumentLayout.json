@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\onedrive\\skrivebord\\green home\\green home\\pages\\green_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\green_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\onedrive\\skrivebord\\green home\\green home\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\onedrive\\skrivebord\\green home\\green home\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Green home\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Green home\\Pages\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T10:40:35.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Green_Home.cshtml",
+              "DocumentMoniker": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Green_Home.cshtml",
+              "RelativeDocumentMoniker": "Green home\\Pages\\Green_Home.cshtml",
+              "ToolTip": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Green_Home.cshtml*",
+              "RelativeToolTip": "Green home\\Pages\\Green_Home.cshtml*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T10:40:02.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Green home\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mnhar\\OneDrive\\Skrivebord\\Green Home\\Green home\\Pages\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "Green home\\Pages\\Shared\\_Layout.cshtml*",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-07T10:38:33.116Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
