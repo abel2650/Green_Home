@@ -1,12 +1,25 @@
 using System;
 using System.Collections.Generic;
+using Green_home.MockData;
 using Green_home.Services;
 
 namespace Green_home.Model
 {
     public class EjendommeRepository : IEjendommeRepository
     {
+        
+        //MockData
         public List<Ejendomme> _ejendomme;
+        
+        public EjendommeRepository(bool withTestData = false)
+        {
+            _ejendomme = new List<Ejendomme>();
+
+            if (withTestData)
+            {
+                _ejendomme.AddRange(EjendommeMockData.GetEjendomme);
+            }
+        }
 
         public EjendommeRepository()
         {
