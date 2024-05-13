@@ -437,3 +437,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Green home/Services/Secret.cs
