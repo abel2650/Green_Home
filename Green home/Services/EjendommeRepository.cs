@@ -59,11 +59,9 @@ namespace Green_home.Model
             }
 
             Ejendomme updateEjendomme = GetById(id);
-
-            // Opret en ny ejendom med de opdaterede egenskaber og det samme id
+            
             Ejendomme updatedEjendomme = new Ejendomme(id, ejendomme.Pris, ejendomme.Kvm, ejendomme.Energimærke);
-
-            // Find indekset for den eksisterende ejendom og erstat den med den opdaterede ejendom
+            
             int index = _ejendomme.IndexOf(updateEjendomme);
             _ejendomme[index] = updatedEjendomme;
 

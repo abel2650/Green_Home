@@ -1,9 +1,8 @@
 using Green_home.Model;
-using System.Collections.Generic;
 
 namespace Green_home.Services
 {
-    public interface IEjendommeRepository
+    public interface IEjendommeRepositoryDB
     {
         List<Ejendomme> GetAll();
         void AddEjendomme(Ejendomme ejendomme);
