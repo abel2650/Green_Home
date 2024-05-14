@@ -440,3 +440,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /Green home/Services/Secret.cs
+/Green home/Green home.csproj.user
