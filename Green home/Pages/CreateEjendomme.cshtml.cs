@@ -44,7 +44,7 @@ namespace Green_home.Pages
             Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke, By_id);
             _ejendommeRepository.AddEjendomme(ejendomme);
 
-            return RedirectToPage("/EjendeommeModel");
+            return RedirectToPage("/EjendommeModel");
         }
     }
 }
