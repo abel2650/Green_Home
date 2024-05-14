@@ -6,6 +6,10 @@ namespace Green_home.Services
 {
     public class EjendommeRepository_DB : IEjendommeRepository_DB
     {
+        public EjendommeRepository_DB() { 
+        
+        }
+
         public List<Ejendomme> GetAll()
         {
             string query = "SELECT * FROM EJENDOMME";

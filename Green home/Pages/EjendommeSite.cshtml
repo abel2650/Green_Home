@@ -1,5 +1,6 @@
 ﻿@page
-@model Green_home.Pages.Shared.EjendommeModel
+@model Green_home.Pages.EjendommeSiteModel
+@using Green_home.Model
 
 @{
     Layout = null;
@@ -40,18 +41,18 @@
             </div>
         </nav>
     </header>
-    <div class="container mt-3">    
+    <div class="container mt-3">
         <form method="post">
             <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
             <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
             <button type="submit" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
             <button type="submit" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
-       
+
         </form>
         <div class="row">
             <table>
                 <tbody>
-                    @foreach (var ejendom in Model.Ejedomme)
+                    @foreach (var ejendom in Model.Ejendomme)
                     {
                         <tr>
                             <td>@ejendom.Id</td>

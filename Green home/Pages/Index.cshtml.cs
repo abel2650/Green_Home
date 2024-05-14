@@ -6,26 +6,23 @@ using Green_home.Services; // Import the namespace for IEjendommeRepository_DB
 
 namespace Green_home.Pages
 {
-    public class EjendommeModel : PageModel
+        public class IndexModel : PageModel
     {
-        private readonly ILogger<EjendommeModel> _logger;
-        private readonly IEjendommeRepository_DB _ejendommeRepositoryDb;
+        private readonly ILogger<IndexModel> _logger;
+       
 
         // Inject the logger and repository interface
-        public EjendommeModel(ILogger<EjendommeModel> logger, IEjendommeRepository_DB ejendommeRepositoryDb)
+        public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            _ejendommeRepositoryDb = ejendommeRepositoryDb;
         }
 
         // Property to hold the list of Ejendomme objects
-        public List<Ejendomme> EjendommeList { get; set; }
-
+    
         // Handler for the GET request
         public void OnGet()
         {
             // Retrieve the list of Ejendomme objects from the repository
-            EjendommeList = _ejendommeRepositoryDb.GetAll();
         }
     }
 }
