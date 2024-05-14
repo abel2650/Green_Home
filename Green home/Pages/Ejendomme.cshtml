@@ -16,42 +16,63 @@
     <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
 </head>
 <body>
-<div>
-    
-
-    <form method="post">
-        <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
-        <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
-        <button type="submit" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
-        <button type="submit" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Green_home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Ejendomme">Ejendomme</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-3">    
+        <form method="post">
+            <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
+            <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
+            <button type="submit" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
+            <button type="submit" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
        
-    </form>
-
-
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Pris</th>
-            <th>Kvm</th>
-            <th>Energimærke</th>
-            <th>By</th>
-         
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var ejendom in Model.Ejedomme)
-        {
-            <tr>
-                <td>@ejendom.Id</td>
-                <td>@ejendom.Pris</td>
-                <td>@ejendom.Kvm</td>
-                <td>@ejendom.Energimærke</td>
-                <td>@ejendom.By_id</td>
-            </tr>
-        }
-        </tbody>
-    </table>
-</div>
+        </form>
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-3 bg-success text-white p-3">ID</th>
+                        <th class="col-3 bg-success text-white p-3">Pris</th>
+                        <th class="col-3 bg-success text-white p-3">Kvm</th>
+                        <th class="col-3 bg-success text-white p-3">Energimærke</th>
+                        <th class="col-3 bg-success text-white p-3">By</th>         
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ejendom in Model.Ejedomme)
+                    {
+                        <tr>
+                            <td>@ejendom.Id</td>
+                            <td>@ejendom.Pris</td>
+                            <td>@ejendom.Kvm</td>
+                            <td>@ejendom.Energimærke</td>
+                            <td>@ejendom.By_id</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
