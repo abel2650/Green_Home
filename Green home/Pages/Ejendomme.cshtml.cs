@@ -15,15 +15,45 @@ public class Ejendomme : PageModel
         _ejendommeRepositoryDb = ejendommeRepositoryDb;
     }
 
-    [BindProperty]
-    public string? Search { get; set; }
     
+
     public List<Model.Ejendomme> Ejedomme { get; set; }
-    
+
     public void OnGet()
     {
         Ejedomme = _ejendommeRepositoryDb.GetAll();
     }
-    
+
+    public IActionResult OnPost(string sortorder)
+    {
+        if (sortorder == "ByID")
+        {
+            Ejedomme = _ejendommeRepositoryDb.GetAll();
+            Ejedomme.Sort(new EjendommeSortById());
+            return Page();
+            
+        }
+        
+        else if (sortorder == "ByPris")
+        {
+            Ejedomme = _ejendommeRepositoryDb.GetAll();
+            Ejedomme.Sort(new EjendommeSortByPris());
+        }
+        
+        else if (sortorder == "ByKvm")
+        {
+            Ejedomme = _ejendommeRepositoryDb.GetAll();
+            Ejedomme.Sort(new EjendommeSortByKvm());
+        }
+        
+        else if (sortorder == "ByEnergimærke")
+        {
+            Ejedomme = _ejendommeRepositoryDb.GetAll();
+            Ejedomme.Sort(new EjendommeSortByEnergimærke());
+        }
+        
+        
+        return Page();
+    }
     
 }

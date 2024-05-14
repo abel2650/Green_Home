@@ -28,6 +28,7 @@ namespace Green_home.Services
 
                 connection.Close();
             }
+          //  ejendommeList.Sort(new EjendommeSortByPris());
             return ejendommeList;
         }
 
