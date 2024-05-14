@@ -28,6 +28,7 @@ namespace Green_home.Services
 
                 connection.Close();
             }
+          //  ejendommeList.Sort(new EjendommeSortByPris());
             return ejendommeList;
         }
 
@@ -100,10 +101,10 @@ namespace Green_home.Services
         {
             Ejendomme e = new Ejendomme();
             e.Id = reader.GetInt32(0);
-            e.Pris = reader.GetFloat(1); // Changed to GetFloat for price
+            e.Pris = (float)reader.GetDouble(1);
             e.Kvm = reader.GetInt32(2);
             e.Energimærke = reader.GetString(3);
-            e.By_id = reader.GetInt32(4); // Corrected property name
+            e.By_id = reader.GetInt32(4); 
             return e;
         }
     }
