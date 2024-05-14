@@ -12,9 +12,17 @@
 </head>
 <body>
 <div>
-    <form method="get">
-        <input type="text" name="search" placeholder="Search..." />
+    
+
+    <form method="post">
+        <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
+        <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
+        <button type="submit" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
+        <button type="submit" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
+       
     </form>
+
+
     <table>
         <thead>
         <tr>
@@ -23,7 +31,7 @@
             <th>Kvm</th>
             <th>Energimærke</th>
             <th>By</th>
-            <!-- Add other properties here -->
+         
         </tr>
         </thead>
         <tbody>
@@ -35,7 +43,6 @@
                 <td>@ejendom.Kvm</td>
                 <td>@ejendom.Energimærke</td>
                 <td>@ejendom.By_id</td>
-                <!-- Add other property values here -->
             </tr>
         }
         </tbody>
