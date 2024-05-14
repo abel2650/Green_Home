@@ -33,7 +33,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Ejendomme">Ejendomme</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeModel">Ejendomme</a>
                         </li>
                     </ul>
                 </div>
@@ -50,15 +50,6 @@
         </form>
         <div class="row">
             <table>
-                <thead>
-                    <tr>
-                        <th class="col-3 bg-success text-white p-3">ID</th>
-                        <th class="col-3 bg-success text-white p-3">Pris</th>
-                        <th class="col-3 bg-success text-white p-3">Kvm</th>
-                        <th class="col-3 bg-success text-white p-3">Energimærke</th>
-                        <th class="col-3 bg-success text-white p-3">By</th>         
-                    </tr>
-                </thead>
                 <tbody>
                     @foreach (var ejendom in Model.Ejedomme)
                     {

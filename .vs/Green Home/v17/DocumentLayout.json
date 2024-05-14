@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\om_os.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\om_os.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\green_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\green_home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\ejendommemodel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\ejendommemodel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\pages\\om_os.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\pages\\om_os.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\services\\secret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\services\\secret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|c:\\users\\mnhar\\source\\repos\\green_home\\green home\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CF69B32-689A-40AC-836C-A17203B36641}|Green home\\Green home.csproj|solutionrelative:green home\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,49 +26,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Om_os.cshtml",
               "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Om_os.cshtml",
               "RelativeDocumentMoniker": "Green home\\Pages\\Om_os.cshtml",
-              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Om_os.cshtml",
-              "RelativeToolTip": "Green home\\Pages\\Om_os.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAmAAAA",
+              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Om_os.cshtml*",
+              "RelativeToolTip": "Green home\\Pages\\Om_os.cshtml*",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-12T22:16:42.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Secret.cs",
-              "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Services\\Secret.cs",
-              "RelativeDocumentMoniker": "Green home\\Services\\Secret.cs",
-              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Services\\Secret.cs",
-              "RelativeToolTip": "Green home\\Services\\Secret.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-08T12:17:30.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "Green home\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Index.cshtml",
-              "RelativeToolTip": "Green home\\Pages\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T10:40:35.975Z",
+              "WhenOpened": "2024-05-14T11:59:48.667Z",
               "EditorCaption": ""
             },
             {
@@ -81,24 +47,41 @@
               "Title": "Green_Home.cshtml",
               "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Green_Home.cshtml",
               "RelativeDocumentMoniker": "Green home\\Pages\\Green_Home.cshtml",
-              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Green_Home.cshtml",
-              "RelativeToolTip": "Green home\\Pages\\Green_Home.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
+              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Green_Home.cshtml*",
+              "RelativeToolTip": "Green home\\Pages\\Green_Home.cshtml*",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACEAAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T10:40:02.135Z",
+              "WhenOpened": "2024-05-14T11:59:20.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EjendommeModel.cshtml",
+              "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\EjendommeModel.cshtml",
+              "RelativeDocumentMoniker": "Green home\\Pages\\EjendommeModel.cshtml",
+              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\EjendommeModel.cshtml*",
+              "RelativeToolTip": "Green home\\Pages\\EjendommeModel.cshtml*",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACMAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-14T11:53:44.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Green home\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Green home\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB0AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-07T10:38:33.116Z",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Program.cs",
+              "RelativeDocumentMoniker": "Green home\\Program.cs",
+              "ToolTip": "C:\\Users\\mnhar\\source\\repos\\Green_Home\\Green home\\Program.cs",
+              "RelativeToolTip": "Green home\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-13T11:36:40.415Z",
               "EditorCaption": ""
             }
           ]
