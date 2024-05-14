@@ -7,9 +7,9 @@ namespace Green_home.Pages.Shared;
 public class Ejendomme : PageModel
 {
     private readonly ILogger<Model.Ejendomme> _logger;
-    private readonly EjendommeRepository_DB _ejendommeRepositoryDb;
+    private readonly IEjendommeRepository_DB _ejendommeRepositoryDb;
 
-    public Ejendomme(ILogger<Model.Ejendomme> logger, EjendommeRepository_DB ejendommeRepositoryDb)
+    public Ejendomme(ILogger<Model.Ejendomme> logger, IEjendommeRepository_DB ejendommeRepositoryDb)
     {
         _logger = logger;
         _ejendommeRepositoryDb = ejendommeRepositoryDb;

@@ -1,7 +1,10 @@
+using Green_home.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IEjendommeRepository_DB, EjendommeRepository_DB>(); 
 
 var app = builder.Build();
 
