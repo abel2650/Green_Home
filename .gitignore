@@ -30,6 +30,8 @@ riderModule.iml
 *.suo
 *.user
 .vs/
+*/.vs/*
+/.vs*
 [Bb]in/
 [Oo]bj/
 _UpgradeReport_Files/
