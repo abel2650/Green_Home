@@ -41,7 +41,7 @@ namespace Green_home.Pages
 
         public IActionResult OnPost()
         {
-            Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke, By_id);
+            Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke.ToUpper(), By_id);
             _ejendommeRepository.AddEjendomme(ejendomme);
 
             return RedirectToPage("/EjendommeSite");
