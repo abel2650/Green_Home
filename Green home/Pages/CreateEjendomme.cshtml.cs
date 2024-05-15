@@ -6,12 +6,12 @@ using Green_home.Model;
 
 namespace Green_home.Pages
 {
-    public class CreateEjendomme : PageModel
+    public class CreateEjendommeModel : PageModel
     {
-        private readonly EjendommeRepository_DB _ejendommeRepository;
+        private readonly IEjendommeRepository_DB _ejendommeRepository;
 
         [BindProperty]
-        [Required(ErrorMessage = "Feltet er påkrævet"), MaxLength(50)]
+        [Required(ErrorMessage = "Feltet er påkrævet")]
         public int Id { get; set; }
 
         [BindProperty]
@@ -19,7 +19,7 @@ namespace Green_home.Pages
         public float Pris { get; set; }
 
         [BindProperty]
-        [Required(ErrorMessage = "Feltet er påkrævet"), MaxLength(1)]
+        [Required(ErrorMessage = "Feltet er påkrævet")]
         public string Energimærke { get; set; }
 
         [BindProperty]
@@ -30,7 +30,7 @@ namespace Green_home.Pages
         [Required(ErrorMessage = "Feltet er påkrævet")]
         public int By_id { get; set; }
 
-        public CreateEjendomme(EjendommeRepository_DB ejendommeRepository)
+        public CreateEjendommeModel(IEjendommeRepository_DB ejendommeRepository)
         {
             _ejendommeRepository = ejendommeRepository;
         }
@@ -44,7 +44,7 @@ namespace Green_home.Pages
             Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke, By_id);
             _ejendommeRepository.AddEjendomme(ejendomme);
 
-            return RedirectToPage("/EjendommeModel");
+            return RedirectToPage("/EjendommeSite");
         }
     }
 }
