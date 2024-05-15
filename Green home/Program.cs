@@ -15,7 +15,7 @@ namespace Green_home
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddSingleton<IEjendommeRepository_DB>(new EjendommeRepository_DB()); // Registering EjendommeRepository_DB as a singleton service
-            Console.WriteLine(builder.Services.ToString());
+           
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
