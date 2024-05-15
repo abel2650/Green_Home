@@ -38,17 +38,16 @@ namespace Green_home.Services
 
         public void AddEjendomme(Ejendomme addEjendomme)
         {
-            string query = "INSERT INTO EJENDOMME VALUES(@Id, @Pris, @Kvm, @Energimærke, @By_Id)";
+            string query = "INSERT INTO EJENDOMME(Pris, Kvm, Energimærke, By_Id) VALUES(@Pris, @Kvm, @Energimærke, @By_Id)";
             using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
             {
                 connection.Open();
 
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Id", addEjendomme.Id);
                 cmd.Parameters.AddWithValue("@Pris", addEjendomme.Pris);
                 cmd.Parameters.AddWithValue("@Kvm", addEjendomme.Kvm);
                 cmd.Parameters.AddWithValue("@Energimærke", addEjendomme.Energimærke);
-                cmd.Parameters.AddWithValue("@By_Id", addEjendomme.By_id); // Corrected parameter name
+                cmd.Parameters.AddWithValue("@By_Id", addEjendomme.By_id);
 
                 int rows = cmd.ExecuteNonQuery();
                 if (rows != 1)

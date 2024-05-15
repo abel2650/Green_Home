@@ -1,19 +1,43 @@
 @page
 @model Green_home.Pages.CreateEjendomme
-
 @{
-    Layout = null;
+    ViewData["Title"] = "Create New Ejendomme";
 }
 
-<!DOCTYPE html>
+<h1>Create New Ejendomme</h1>
 
-<html>
-<head>
-    <title></title>
-</head>
-<body>
 <div>
-    
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Id"></label>
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Pris"></label>
+            <input asp-for="Pris" class="form-control" />
+            <span asp-validation-for="Pris" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Energimærke"></label>
+            <input asp-for="Energimærke" class="form-control" />
+            <span asp-validation-for="Energimærke" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Kvm"></label>
+            <input asp-for="Kvm" class="form-control" />
+            <span asp-validation-for="Kvm" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="By_id"></label>
+            <input asp-for="By_id" class="form-control" />
+            <span asp-validation-for="By_id" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
 </div>
-</body>
-</html>
