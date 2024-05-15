@@ -41,7 +41,7 @@
             </div>
         </nav>
     </header>
-    <div class="container mt-3">
+    <div class="container mt-5 bg-success">
         <form method="post">
             <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
             <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
@@ -54,7 +54,7 @@
                 <tbody>
                     @foreach (var ejendom in Model.Ejendomme)
                     {
-                        <tr>
+                        <tr class="container mt-3 bg-primary">
                             <td>@ejendom.Id</td>
                             <td>@ejendom.Pris</td>
                             <td>@ejendom.Kvm</td>

@@ -38,7 +38,7 @@ namespace Green_home.Services
 
         public void AddEjendomme(Ejendomme addEjendomme)
         {
-            string query = "INSERT INTO EJENDOMME VALUES(@Id, @Pris, @Kvm, @Energimærke, @By_Id)";
+            string query = "INSERT INTO EJENDOMME VALUES( @Pris, @Kvm, @Energimærke, @By_Id)";
             using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
             {
                 connection.Open();
