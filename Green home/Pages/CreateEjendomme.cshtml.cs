@@ -6,7 +6,7 @@ using Green_home.Model;
 
 namespace Green_home.Pages
 {
-    public class CreateEjendomme : PageModel
+    public class CreateEjendommeModel : PageModel
     {
         private readonly IEjendommeRepository_DB _ejendommeRepository;
 
@@ -30,7 +30,7 @@ namespace Green_home.Pages
         [Required(ErrorMessage = "Feltet er påkrævet")]
         public int By_id { get; set; }
 
-        public CreateEjendomme(IEjendommeRepository_DB ejendommeRepository)
+        public CreateEjendommeModel(IEjendommeRepository_DB ejendommeRepository)
         {
             _ejendommeRepository = ejendommeRepository;
         }

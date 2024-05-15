@@ -1,5 +1,5 @@
 @page
-@model Green_home.Pages.CreateEjendomme
+@model Green_home.Pages.CreateEjendommeModel
 @{
     ViewData["Title"] = "Create New Ejendomme";
 }
@@ -8,11 +8,6 @@
 
 <div>
     <form method="post">
-        <div class="form-group">
-            <label asp-for="Id"></label>
-            <input asp-for="Id" class="form-control" />
-            <span asp-validation-for="Id" class="text-danger"></span>
-        </div>
 
         <div class="form-group">
             <label asp-for="Pris"></label>
