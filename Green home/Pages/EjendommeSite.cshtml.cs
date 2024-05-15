@@ -43,10 +43,10 @@ namespace Green_home.Pages
                 Ejendomme.Sort(new EjendommeSortByKvm());
             }
 
-            else if (sortorder == "ByEnergimærke")
+            else if (sortorder == "ByEnergimÃ¦rke")
             {
                 Ejendomme = _ejendommeRepositoryDb.GetAll();
-                Ejendomme.Sort(new EjendommeSortByEnergimærke());
+                Ejendomme.Sort(new EjendommeSortByEnergimÃ¦rke());
             }
 
 
