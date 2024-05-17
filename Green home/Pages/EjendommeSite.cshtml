@@ -47,13 +47,23 @@
         </div>
     </nav>
 </header>
-<form class="d-flex" method="post" asp-page-handler="Search">
-    <input class="form-control-sm me-2" type="search" placeholder="Energimærke" aria-label="Search" name="searchEnergimærke">
-    <input class="form-control-sm me-2" type="search" placeholder="By ID" aria-label="Search" name="searchBy">
-    <button class="btn btn-outline-success" type="submit">Søg</button>
-</form>
+  <form class="d-flex justify-content-center mb-3" method="post" asp-page-handler="Search">
+         <div class="row">
+             <div class="col">
+                 <input class="form-control form-control-sm mb-2" type="search" placeholder="Energimærke" aria-label="Search" name="searchEnergimærke">
+             </div>
+             <div class="col">
+                 <input class="form-control form-control-sm mb-2" type="search" placeholder="By ID" aria-label="Search" name="searchBy">
+             </div>
+             <div class="col">
+                 <button class="btn btn-outline-success btn-sm" type="submit">Søg</button>
+             </div>
+         </div>
+     </form>
     <div class="container mt-5">
         <form method="post" class="mb-3">
+            <div class="d-flex justify-content-end mb-3"><a href="https://danskebank.dk/privat/vaerktoejer/beregn/laaneberegner-ejerbolig" class="btn btn-primary btn-lg">Låneberegner</a>
+            </div>
             <div>
                 <select id="filterEnergimaerke" name="filterEnergimaerke" class="form-select dropdown-short" onchange="this.form.submit()">
                     <option value="">Vælg energimærke</option>
@@ -63,7 +73,7 @@
                 </select>
             </div>
             <div class="mt-3">
-                
+
                 <button type="submit" class="btn btn-success" name="sortorder" value="ByPris">Sorter efter pris</button>
                 <button type="submit" class="btn btn-success" name="sortorder" value="ByKvm">Sorter efter kvm</button>
                 <button type="submit" class="btn btn-success" name="sortorder" value="ByEnergimærke">Sorter efter energimærke</button>
