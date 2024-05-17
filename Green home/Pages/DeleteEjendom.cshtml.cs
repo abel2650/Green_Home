@@ -18,22 +18,17 @@ public class DeleteEjendom : PageModel
 
     public List<Ejendomme> Ejendomme { get; set; }
 
-    public void OnGet()
+    public void OnGet(int? id)
     {
         Ejendomme = _ejendommeRepositoryDb.GetAll();
     }
 
     public IActionResult OnPostDelete(int id)
     {
-        try
-        {
+        
             _ejendommeRepositoryDb.DeleteEjendomme(id);
-            return RedirectToPage("/DeleteEjendom");
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError($"Fejl ved at slette ejendom{id}: {ex.Message}");
-            return Page();
-        }
+            return RedirectToPage("/DeleteEjendom", new {id = id});
+        
+        
     }
 }
