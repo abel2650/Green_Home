@@ -30,7 +30,7 @@ namespace Green_home.Tests.Model
             Assert.AreEqual(pris, ejendomme.Pris);
             Assert.AreEqual(kvm, ejendomme.Kvm);
             Assert.AreEqual(energimærke, ejendomme.Energimærke);
-            Assert.AreEqual(by_id, ejendomme.By_id);
+            Assert.AreEqual(by_id, ejendomme.Post_nr);
         }
         
         [TestMethod]

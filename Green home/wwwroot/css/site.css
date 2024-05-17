@@ -1,5 +1,7 @@
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8,18 +10,65 @@ html {
   }
 }
 
+body {
+  margin-bottom: 60px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f8;
+  padding: 0;
+  margin: 0;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+header {
+  background-color: #CF1000;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
 }
 
-body {
-  margin-bottom: 60px;
+nav {
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0;
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  background-color: #CF1000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
 .dropdown-short {
-  max-width: 200px; /* Juster denne værdi efter behov */
+  max-width: 200px;
 }
