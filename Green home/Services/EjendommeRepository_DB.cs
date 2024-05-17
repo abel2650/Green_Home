@@ -38,7 +38,7 @@ namespace Green_home.Services
 
         public void AddEjendomme(Ejendomme addEjendomme)
         {
-            string query = "INSERT INTO EJENDOMME(Pris, Kvm, Energimærke, By_Id) VALUES(@Pris, @Kvm, @Energimærke, @By_Id)";
+            string query = "INSERT INTO EJENDOMME(Pris, Kvm, Energimærke, Post_nr) VALUES(@Pris, @Kvm, @Energimærke, @Post_nr)";
             using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
             {
                 connection.Open();
@@ -47,7 +47,7 @@ namespace Green_home.Services
                 cmd.Parameters.AddWithValue("@Pris", addEjendomme.Pris);
                 cmd.Parameters.AddWithValue("@Kvm", addEjendomme.Kvm);
                 cmd.Parameters.AddWithValue("@Energimærke", addEjendomme.Energimærke);
-                cmd.Parameters.AddWithValue("@By_Id", addEjendomme.By_id);
+                cmd.Parameters.AddWithValue("@Post_nr", addEjendomme.Post_nr);
 
                 int rows = cmd.ExecuteNonQuery();
                 if (rows != 1)
@@ -79,7 +79,7 @@ namespace Green_home.Services
 
         public void UpdateEjendomme(int id, Ejendomme updateEjendomme) // Corrected method name
         {
-            string query = "INSERT INTO EJENDOMME VALUES(@Id, @Pris, @Kvm, @Energimærke, @By_Id)";
+            string query = "INSERT INTO EJENDOMME VALUES(@Id, @Pris, @Kvm, @Energimærke, @Post_nr)";
             using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
             {
                 connection.Open();
@@ -89,7 +89,7 @@ namespace Green_home.Services
                 cmd.Parameters.AddWithValue("@Pris", updateEjendomme.Pris);
                 cmd.Parameters.AddWithValue("@Kvm", updateEjendomme.Kvm);
                 cmd.Parameters.AddWithValue("@Energimærke", updateEjendomme.Energimærke);
-                cmd.Parameters.AddWithValue("@By_Id", updateEjendomme.By_id); // Corrected parameter name
+                cmd.Parameters.AddWithValue("@Post_nr", updateEjendomme.Post_nr); // Corrected parameter name
                 int row = cmd.ExecuteNonQuery();
                 Console.WriteLine("Rows ændret " + row);
 
@@ -122,10 +122,10 @@ namespace Green_home.Services
         {
             Ejendomme e = new Ejendomme();
             e.Id = reader.GetInt32(0);
-            e.Pris = (float)reader.GetDouble(1);
+            e.Pris = reader.GetDouble(1);
             e.Kvm = reader.GetInt32(2);
             e.Energimærke = reader.GetString(3);
-            e.By_id = reader.GetInt32(4); 
+            e.Post_nr = reader.GetInt32(4); 
             return e;
         }
     }

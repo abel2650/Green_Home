@@ -62,7 +62,7 @@ namespace Green_home.Pages
 
             if (!string.IsNullOrEmpty(searchBy))
             {
-                Ejendomme = Ejendomme.Where(e => e.By_id == int.Parse(searchBy)).ToList(); 
+                Ejendomme = Ejendomme.Where(e => e.Post_nr == int.Parse(searchBy)).ToList(); 
             }
 
             return Page();
