@@ -21,14 +21,12 @@ namespace Green_home.Pages
             Ejendomme = _ejendommeRepositoryDb.GetAll();
         }
 
-        public IActionResult OnPost(string sortorder)
+        public IActionResult OnPost(string sortorder, string filterEnergimaerke)
         {
-            if (sortorder == "ByID")
+            if (!string.IsNullOrEmpty(filterEnergimaerke))
             {
-                Ejendomme = _ejendommeRepositoryDb.GetAll();
-                Ejendomme.Sort(new EjendommeSort.SortById());
+                Ejendomme = _ejendommeRepositoryDb.GetByEnergimaerke(filterEnergimaerke);
                 return Page();
-
             }
 
             else if (sortorder == "ByPris")
@@ -52,6 +50,22 @@ namespace Green_home.Pages
 
             return Page();
         }
+        public IActionResult OnPostSearch(string searchEnergimærke, string searchBy)
+        {
+            Ejendomme = _ejendommeRepositoryDb.GetAll();
 
+
+            if (!string.IsNullOrEmpty(searchEnergimærke))
+            {
+                Ejendomme = Ejendomme.Where(e => e.Energimærke == searchEnergimærke).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(searchBy))
+            {
+                Ejendomme = Ejendomme.Where(e => e.By_id == int.Parse(searchBy)).ToList(); 
+            }
+
+            return Page();
+        }
     }
 }
