@@ -71,10 +71,7 @@ namespace Green_home.Services
 
                 int rows = cmd.ExecuteNonQuery();
 
-                if (rows != 0)
-                {
-                    throw new ArgumentException("Kunne ikke slette Ejendomme med id=" + id);
-                }
+                
 
                 connection.Close();
             }
