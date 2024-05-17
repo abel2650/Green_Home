@@ -36,34 +36,41 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeModel">Ejendomme</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container mt-5 bg-success">
-        <form method="post">
-            <button type="submit" asp-route-sortorder="ByID">Sorter efter ID</button>
-            <button type="submit" asp-route-sortorder="ByPris">Sorter efter pris</button>
-            <button type="submit" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
-            <button type="submit" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
-
+    <div class="container mt-5">
+        <form method="post" class="mb-3">
+            <button type="submit" class="btn btn-success" asp-route-sortorder="ByPris">Sorter efter pris</button>
+            <button type="submit" class="btn btn-success" asp-route-sortorder="ByKvm">Sorter efter kvm</button>
+            <button type="submit" class="btn btn-success" asp-route-sortorder="ByEnergimærke">Sorter efter energimærke</button>
         </form>
         <div class="row">
-            <table>
-                <tbody>
-                    @foreach (var ejendom in Model.Ejendomme)
-                    {
-                        <tr class="container mt-3 bg-primary">
-                            <td>@ejendom.Id</td>
-                            <td>@ejendom.Pris</td>
-                            <td>@ejendom.Kvm</td>
-                            <td>@ejendom.Energimærke</td>
-                            <td>@ejendom.By_id</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+            @foreach (var ejendom in Model.Ejendomme)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="Images/House placeholder foto.png" class="img-fluid rounded-start" alt="Ejendom Billede">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-text">Pris: @ejendom.Pris kr.</h5>
+                                    <p class="card-text">Kvm: @ejendom.Kvm</p>
+                                    <p class="card-text">By ID: @ejendom.By_id</p>
+                                    <h6 class="card-text">Energimærke: @ejendom.Energimærke</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
 </body>
