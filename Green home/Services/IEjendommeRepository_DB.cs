@@ -8,6 +8,7 @@ namespace Green_home.Services
         List<Ejendomme> GetAll();
         void AddEjendomme(Ejendomme ejendomme);
         void DeleteEjendomme(int id);
-        void UpdateEjendomme(int id, Ejendomme ejendomme);
+        void UpdateEjendomme(int id, Ejendomme ejendomme); 
+        List<Ejendomme> GetByEnergimaerke(string energimaerke);
     }
 }

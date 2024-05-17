@@ -99,6 +99,27 @@ namespace Green_home.Services
                 connection.Close();
             }
         }
+        public List<Ejendomme> GetByEnergimaerke(string energimaerke)
+        {
+            string query = "SELECT * FROM EJENDOMME WHERE Energimærke = @Energimærke";
+            List<Ejendomme> ejendommeList = new List<Ejendomme>();
+
+            using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Energimærke", energimaerke);
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Ejendomme ejendomme = ReadEjendomme(reader);
+                    ejendommeList.Add(ejendomme);
+                }
+                connection.Close();
+            }
+            return ejendommeList;
+        }
 
         private Ejendomme ReadEjendomme(SqlDataReader reader)
         {

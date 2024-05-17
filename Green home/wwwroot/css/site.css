@@ -20,3 +20,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+.dropdown-short {
+  max-width: 200px; /* Juster denne værdi efter behov */
+}
