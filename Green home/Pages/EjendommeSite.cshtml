@@ -39,11 +39,19 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+<form class="d-flex" method="post" asp-page-handler="Search">
+    <input class="form-control-sm me-2" type="search" placeholder="Energimærke" aria-label="Search" name="searchEnergimærke">
+    <input class="form-control-sm me-2" type="search" placeholder="By ID" aria-label="Search" name="searchBy">
+    <button class="btn btn-outline-success" type="submit">Søg</button>
+</form>
     <div class="container mt-5">
         <form method="post" class="mb-3">
             <div>
