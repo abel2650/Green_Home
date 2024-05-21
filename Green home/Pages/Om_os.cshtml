@@ -4,6 +4,7 @@
     Layout = null;
     ViewData["Title"] = "Om os";
 }
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,78 +13,111 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .navbar-brand img {
+            height: 30px;
+            width: auto;
+        }
+        .hero-section {
+            background-color: #e8f5e9;
+            padding: 50px 20px;
+        }
+        .hero-section h1 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+        }
+        .hero-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .card {
+            margin-bottom: 30px;
+        }
+        .card-title {
+            color: #4CAF50;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Green Home</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                        </li>
-                    </ul>
-                </div>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">Green Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                    <li/>
+                </ul>
             </div>
-        </nav>
-    </header>
-        <div class="text-center">
-            <h1 class="display-4">Om os</h1>
-            <p>Velkommen til Green Home, hvor vi er dedikerede til at fremme bæredygtighed i ejendomshandel. Grundlagt i 2024 med en mission om at gøre bæredygtige boliger tilgængelige for alle, arbejder vi utrætteligt for at integrere miljøvenlige praksisser i alle aspekter af vores virksomhed.
-
-                Vores team består af passionerede fagfolk med ekspertise inden for ejendomsudvikling, bæredygtighed og kundeservice. Vi er stolte over at tilbyde en platform, der ikke kun faciliterer køb og salg af bæredygtige boliger, men også uddanner og inspirerer vores brugere til at træffe miljøbevidste valg.
-
-                Hos Green Home forpligter vi os til integritet og åbenhed i alle vores forretningsgøremål. Vi tror på at bygge langvarige relationer med vores kunder, partnere og samfundet, og vi stræber efter at være en betroet ressource og leder inden for den bæredygtige ejendomssektor.
-
-                Tak fordi du besøger vores hjemmeside. Vi ser frem til at hjælpe dig med at finde dit bæredygtige hjem.</p>
         </div>
-    <div class="container mt-3">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="Images/Green Home Image Rebin om os.jpg" alt="Card image" style="width:100%; height: 400px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Rebin</h4>
-                        <p class="card-text">Rådgiver</p>
-                    </div>
+    </nav>
+</header>
+<div class="hero-section text-center">
+    <h1 class="display-4">Om os</h1>
+    <p>Velkommen til Green Home, hvor vi er dedikerede til at fremme bæredygtighed i ejendomshandel. Grundlagt i 2024 med en mission om at gøre bæredygtige boliger tilgængelige for alle, arbejder vi utrætteligt for at integrere miljøvenlige praksisser i alle aspekter af vores virksomhed.</p>
+    <p>Vores team består af passionerede fagfolk med ekspertise inden for ejendomsudvikling, bæredygtighed og kundeservice. Vi er stolte over at tilbyde en platform, der ikke kun faciliterer køb og salg af bæredygtige boliger, men også uddanner og inspirerer vores brugere til at træffe miljøbevidste valg.</p>
+    <p>Hos Green Home forpligter vi os til integritet og åbenhed i alle vores forretningsgøremål. Vi tror på at bygge langvarige relationer med vores kunder, partnere og samfundet, og vi stræber efter at være en betroet ressource og leder inden for den bæredygtige ejendomssektor.</p>
+    <p>Tak fordi du besøger vores hjemmeside. Vi ser frem til at hjælpe dig med at finde dit bæredygtige hjem.</p>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="Images/Green Home Image Rebin om os.jpg" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Rebin</h4>
+                    <p class="card-text">Rådgiver</p>
                 </div>
             </div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="Images/Mathias  Green Home Om Os.png" alt="Card image" style="width:100%; height: 400px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Mathias</h4>
-                        <p class="card-text">Founder af Green Home</p>
-                    </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="Images/Mathias  Green Home Om Os.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Mathias</h4>
+                    <p class="card-text">Founder af Green Home</p>
                 </div>
             </div>
-
-            <div class="col-sm-4">
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="Images/Marucs nyeeste.png" alt="Card image" style="width:100%; height: 400px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Marcus</h4>
-                        <p class="card-text">CO-Founder af Green Home og It-Supporter</p>
-                    </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="Images/Marucs nyeeste.png" alt="Card image">
+                <div class="card-body">
+                    <h4 class="card-title">Marcus</h4>
+                    <p class="card-text">CO-Founder af Green Home og IT-Supporter</p>
                 </div>
             </div>
         </div>
     </div>
-
+</div>
 </body>
 </html>
