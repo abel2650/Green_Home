@@ -28,7 +28,7 @@ namespace Green_home.Pages
 
         [BindProperty]
         [Required(ErrorMessage = "Feltet er påkrævet")]
-        public int By_id { get; set; }
+        public int Post_nr { get; set; }
 
         public CreateEjendommeModel(IEjendommeRepository_DB ejendommeRepository)
         {
@@ -41,7 +41,7 @@ namespace Green_home.Pages
 
         public IActionResult OnPost()
         {
-            Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke.ToUpper(), By_id);
+            Green_home.Model.Ejendomme ejendomme = new Green_home.Model.Ejendomme(Id, Pris, Kvm, Energimærke.ToUpper(), Post_nr);
             _ejendommeRepository.AddEjendomme(ejendomme);
 
             return RedirectToPage("/EjendommeSite");

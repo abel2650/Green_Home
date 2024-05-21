@@ -6,20 +6,17 @@
 <h2>@ViewData["Title"]</h2>
 <table class="table">
     <thead>
-    <tr>
-        <th>Id</th>
-        <th>Pris</th>
-        <th>Kvm</th>
-        <th>Energimærke</th>
-        <th>By Id</th>
-        <th>Handling</th>
-    </tr>
+        <tr>
+            <th>Pris</th>
+            <th>Kvm</th>
+            <th>Energimærke</th>
+            <th>Post nr.</th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var ejendom in Model.Ejendomme)
     {
         <tr>
-            <td>@ejendom.Id</td>
             <td>@ejendom.Pris</td>
             <td>@ejendom.Kvm</td>
             <td>@ejendom.Energimærke</td>

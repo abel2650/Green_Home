@@ -1,6 +1,6 @@
 ﻿namespace Green_home.Services
 {
-    public class AdminRepository
+    public class AdminRepository_DB
     {
     }
 }
