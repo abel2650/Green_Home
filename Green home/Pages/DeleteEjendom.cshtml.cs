@@ -16,9 +16,14 @@ public class DeleteEjendom : PageModel
     public List<Ejendomme> Ejendomme { get; set; }
 
  
-    public void OnGet(int? id)
+    public IActionResult OnGet(int? id)
     {
+        Admin admin = null;
+        try { admin = SessionHelper.Get<Admin>(HttpContext); }
+        catch { return RedirectToPage("/Green Home"); }
+
         Ejendomme = _ejendommeRepositoryDb.GetAll();
+        return Page();
     }
 
     public IActionResult OnPostDelete(int id)
