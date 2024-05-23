@@ -1,9 +1,24 @@
 ﻿@page
 @model Green_home.Pages.Green_HomeModel
+@using Green_home.Model
+@using Green_home.Services
+
 @{
     Layout = null;
     ViewData["Title"] = "Om os";
+
+    // Check if an admin is logged in
+    Admin admin = null;
+    try 
+    { 
+        admin = SessionHelper.Get<Admin>(HttpContext); 
+    }
+    catch 
+    { 
+        // Handle the error if there is no admin session
+    }
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,12 +49,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
-                        <li/>
+                        @if (admin != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
