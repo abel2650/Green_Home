@@ -16,9 +16,9 @@ namespace Green_home.Pages
 
         // Properties
         [BindProperty]
-        public string Username { get; set; }
+        public string Brugernavn { get; set; }
         [BindProperty]
-        public string Password { get; set; }
+        public string Kodeord { get; set; }
         [BindProperty]
         public string ErrMessage { get; set; }
 
@@ -40,7 +40,7 @@ namespace Green_home.Pages
             try
             {
                 // Kontroller om login er gyldigt
-                Admin admin = _repo.ReadLogin(Username, Password);
+                Admin admin = _repo.ReadLogin(Brugernavn, Kodeord);
 
                 if (admin != null)
                 {
