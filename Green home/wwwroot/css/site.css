@@ -23,15 +23,8 @@ body {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-header {
-  background-color: #CF1000;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-}
-
 nav {
-  background-color: #ffffff;
+  background-color: #cccccc;
   border-bottom: 1px solid #cccccc;
   padding: 10px 0;
 }
@@ -72,3 +65,55 @@ footer {
 .dropdown-short {
   max-width: 200px;
 }
+
+/* Navbar */
+
+/* Ændre navbar font-type, skriftstørrelse og farve */
+.navbar {
+    font-family: 'Times New Roman'; /* Skift skrifttype her */
+    font-size: 500; /* Skift skriftstørrelse her */
+    color: white; /* Skift skriftfarve her */
+    background-color: forestgreen;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto; /* Bevarer billedets proportioner */
+}
+
+/* Ændrer skriftstørrelse og farve på nav-link */
+.navbar .nav-link {
+    font-size: 16px; /* Skift skriftstørrelse her */
+    color: #007bff; /* Skift farve her */
+}
+
+/* Ændrer farve på nav-link ved hover */
+.navbar .nav-link:hover {
+    color: #0056b3; /* Skift hover-farve her */
+}
+
+
+/*
+    Om os siden
+*/
+
+.card-img-top {
+    width: 100%;
+    height: 600px; /* Fastsætter højden på billederne */
+    object-fit: cover; /* Sørger for at billedet fylder hele rammen uden at forvrænge billedets proportioner */
+}
+
+.card {
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+
+*/

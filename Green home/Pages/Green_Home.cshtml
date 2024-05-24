@@ -4,6 +4,24 @@
     Layout = null;
     ViewData["Title"] = "Forside";
 }
+
+@using Green_home.Services
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Green_home.Model
+
+@{
+    // Kontroller om en admin er logget ind
+    Admin admin = null!;
+    try 
+    { 
+        admin = SessionHelper.Get<Admin>(admin, HttpContext); 
+    }
+    catch 
+    { 
+        // Håndter fejlen hvis der ikke er nogen admin-session
+    }
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +34,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
                     <img src="~/Images/Skærmbillede 2024-05-17 kl. 16.07.21.png" alt="Green Home Logo" width="65px">
@@ -36,19 +54,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
-                        </li>
+                        @if (admin != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ud</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                            </li> 
+                        }
+                        
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
     <div class="hero-image">
         <img src="~/Images/pexels-pixabay-414837.jpg" alt="Card image" class="img-fluid" style="width:100%; height:auto;">
