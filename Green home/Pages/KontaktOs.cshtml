@@ -1,8 +1,8 @@
 ﻿@page
-@model Green_home.Pages.Green_HomeModel
+@model Green_home.Pages.KontaktOsModel
 @{
     Layout = null;
-    ViewData["Title"] = "Om os";
+    ViewData["Title"] = "Kontakt os";
 }
 
 @using Green_home.Services
@@ -12,12 +12,12 @@
 @{
     // Kontroller om en admin er logget ind
     Admin admin = null!;
-    try 
-    { 
-        admin = SessionHelper.Get<Admin>(admin, HttpContext); 
+    try
+    {
+        admin = SessionHelper.Get<Admin>(admin, HttpContext);
     }
-    catch 
-    { 
+    catch
+    {
         // Håndter fejlen hvis der ikke er nogen admin-session
     }
 }
@@ -48,14 +48,8 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    Om os
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" asp-area="" asp-page="/Om_os">Om os</a>
-                                    <a class="dropdown-item" asp-area="" asp-page="/KontaktOs">Kontakt os</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
@@ -79,24 +73,20 @@
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
                                 </li>
                             }
-
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
         <div class="hero-section text-center">
-            <h1 class="display-4">Om os</h1>
-            <p>Velkommen til Green Home, hvor vi er dedikerede til at fremme bæredygtighed i ejendomshandel. Grundlagt i 2024 med en mission om at gøre bæredygtige boliger tilgængelige for alle, arbejder vi utrætteligt for at integrere miljøvenlige praksisser i alle aspekter af vores virksomhed.</p>
-            <p>Vores team består af passionerede fagfolk med ekspertise inden for ejendomsudvikling, bæredygtighed og kundeservice. Vi er stolte over at tilbyde en platform, der ikke kun faciliterer køb og salg af bæredygtige boliger, men også uddanner og inspirerer vores brugere til at træffe miljøbevidste valg.</p>
-            <p>Hos Green Home forpligter vi os til integritet og åbenhed i alle vores forretningsgøremål. Vi tror på at bygge langvarige relationer med vores kunder, partnere og samfundet, og vi stræber efter at være en betroet ressource og leder inden for den bæredygtige ejendomssektor.</p>
-            <p>Tak fordi du besøger vores hjemmeside. Vi ser frem til at hjælpe dig med at finde dit bæredygtige hjem.</p>
+            <h1 class="display-4">Kontakt os</h1>
+
         </div>
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top" src="Images/Green Home Image Rebin om os.jpg" alt="Card image">
+                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">Rebin</h4>
                             <p class="card-text">Rådgiver</p>
@@ -105,7 +95,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top" src="Images/Mathias  Green Home Om Os.png" alt="Card image">
+                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">Mathias</h4>
                             <p class="card-text">Founder af Green Home</p>
@@ -114,7 +104,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top" src="Images/Marucs nyeeste.png" alt="Card image">
+                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
                         <div class="card-body">
                             <h4 class="card-title">Marcus</h4>
                             <p class="card-text">CO-Founder af Green Home og IT-Supporter</p>
