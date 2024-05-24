@@ -1,32 +1,106 @@
 @page
 @model Green_home.Pages.DeleteEjendom
 @{
+    Layout = null;
     ViewData["Title"] = "Slet Ejendomme";
 }
-<h2>@ViewData["Title"]</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Pris</th>
-            <th>Kvm</th>
-            <th>Energimærke</th>
-            <th>Post nr.</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach (var ejendom in Model.Ejendomme)
+
+@using Green_home.Services
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Green_home.Model
+
+@{
+    // Kontroller om en admin er logget ind
+    Admin admin = null;
+    try
     {
-        <tr>
-            <td>@ejendom.Pris</td>
-            <td>@ejendom.Kvm</td>
-            <td>@ejendom.Energimærke</td>
-            <td>@ejendom.Post_nr</td>
-            <td>
-                <form method="post" asp-page-handler="Delete" asp-route-id="@ejendom.Id">
-                    <button type="submit" class="btn btn-danger">Slet</button>
-              </form>
-            </td>
-        </tr>
+        admin = SessionHelper.Get<Admin>(HttpContext);
     }
-    </tbody>
-</table>
+    catch
+    {
+        // Håndter fejlen hvis der ikke er nogen admin-session
+    }
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Green Home</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <img src="~/Images/Skærmbillede 2024-05-17 kl. 16.07.21.png" alt="Green Home Logo" width="65px">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
+                            </li>
+                            @if (admin != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+            <tbody>
+                <div class="row">
+                    @foreach (var ejendom in Model.Ejendomme)
+                    {
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="Images/House placeholder foto.png" class="img-fluid rounded-start" alt="Ejendom Billede">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <tr>
+                                                <h5 class="card-text">Pris: @ejendom.Pris kr.</h5>
+                                                <p class="card-text">Kvm: @ejendom.Kvm</p>
+                                                <p class="card-text">Post nr.: @ejendom.Post_nr</p>
+                                                <h6 class="card-text">Energimærke: @ejendom.Energimærke</h6>
+                                                <td>
+                                                    <form method="post" asp-page-handler="Delete" asp-route-id="@ejendom.Id">
+                                                        <button type="submit" class="btn btn-danger">Slet</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </tbody>
+        </div>
+    </body>
+</html>

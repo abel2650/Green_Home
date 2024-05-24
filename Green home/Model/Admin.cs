@@ -21,32 +21,32 @@ namespace Green_home.Model
             private set { _admin_Id = value; }
         }
 
-        public string Navn 
-        {   
-            get { return _navn; } 
+        public string Navn
+        {
+            get { return _navn; }
             set { _navn = value; }
         }
 
-        public string Efternavn 
-        { 
-            get { return _efternavn;} 
+        public string Efternavn
+        {
+            get { return _efternavn; }
             set { _efternavn = value; }
         }
 
-        public int Tlf_nr 
-        { 
-            get { return _tlf_nr; } 
-            set { _tlf_nr = value;}
+        public int Tlf_nr
+        {
+            get { return _tlf_nr; }
+            set { _tlf_nr = value; }
         }
 
-        public string Username 
-        { 
+        public string Username
+        {
             get { return _username; }
             set { _username = value; }
         }
 
-        public string Password 
-        { 
+        public string Password
+        {
             get { return _password; }
             set { _password = value; }
         }
@@ -61,7 +61,7 @@ namespace Green_home.Model
             Password = password;
         }
 
-        public Admin() :this (1, "","",11223344,"","")
+        public Admin() : this(1, "", "", 11223344, "", "")
         {
 
         }
