@@ -11,7 +11,7 @@
     Admin admin = null;
     try 
     { 
-        admin = SessionHelper.Get<Admin>(HttpContext); 
+        admin = SessionHelper.Get<Admin>(admin, HttpContext); 
     }
     catch 
     { 

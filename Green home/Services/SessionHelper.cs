@@ -14,27 +14,27 @@ namespace Green_home.Services
     public static class SessionHelper
     {
 
-        public static T Get<T>(HttpContext context)
+        public static T Get<T>(T t, HttpContext context)
         {
-            String sessionName = typeof(T).Name;
+            String sessionName = nameof(t);
             String? s = context.Session.GetString(sessionName);
-            if (string.IsNullOrWhiteSpace(s))
-            {
-                throw new NoSessionObjectException($"No session {sessionName}");
-            }
+            // if (string.IsNullOrWhiteSpace(s))
+            // {
+            //     throw new NoSessionObjectException($"No session {sessionName}");
+            // }
             return JsonSerializer.Deserialize<T>(s);
 
         }
         public static void Set<T>(T t, HttpContext context)
         {
-            String sessionName = typeof(T).Name;
+            String sessionName = nameof(t);
             String s = JsonSerializer.Serialize(t);
             context.Session.SetString(sessionName, s);
         }
-
-        public static void Clear<T>(HttpContext context)
+    
+        public static void Clear<T>(T t, HttpContext context)
         {
-            context.Session.Remove(typeof(T).Name);
+            context.Session.Remove(nameof(t))   ;
         }
     }
 }
