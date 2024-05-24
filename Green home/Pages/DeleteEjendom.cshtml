@@ -98,6 +98,8 @@
                                                 <form method="post" asp-page-handler="Delete" asp-route-id="@ejendom.Id">
                                                     <button type="submit" class="btn btn-danger">Slet</button>
                                                 </form>
+                                                <br/>
+                                                <a asp-page="/UpdateEjendom" asp-route-id="@ejendom.Id" class="btn btn-primary">Opdater</a>
                                             </td>
                                         </tr>
                                     </div>

@@ -84,13 +84,17 @@ namespace Green_home.Services
         // Metode til at opdatere en ejendom i databasen baseret på dens ID.
         public void UpdateEjendomme(int id, Ejendomme updateEjendomme)
         {
-            string query = "INSERT INTO EJENDOMME VALUES(@Id, @Pris, @Kvm, @Energimærke, @Post_nr)";
+            string query = "UPDATE EJENDOMME " +
+                           "SET Pris = @Pris, " +
+                           "Kvm = @Kvm, " +
+                           "Energimærke = @Energimærke, " +
+                           "Post_nr = @Post_nr WHERE Id = @PId";
             using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
             {
                 connection.Open();
 
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@Id", updateEjendomme.Id);
+                cmd.Parameters.AddWithValue("@PId", id); 
                 cmd.Parameters.AddWithValue("@Pris", updateEjendomme.Pris);
                 cmd.Parameters.AddWithValue("@Kvm", updateEjendomme.Kvm);
                 cmd.Parameters.AddWithValue("@Energimærke", updateEjendomme.Energimærke);

@@ -6,6 +6,6 @@ namespace Green_home.Services
     public interface IAdminRepository_DB
     {
         public Admin ReadLogin(string username, string password);
-        
+        void CreateAdmin(Admin admin);
     }
 }
