@@ -66,6 +66,33 @@ footer {
   max-width: 200px;
 }
 
+/* Navbar */
+
+/* Ændre navbar font-type, skriftstørrelse og farve */
+.navbar {
+    font-family: 'Times New Roman'; /* Skift skrifttype her */
+    font-size: 500; /* Skift skriftstørrelse her */
+    color: white; /* Skift skriftfarve her */
+    background-color: forestgreen;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    height: auto; /* Bevarer billedets proportioner */
+}
+
+/* Ændrer skriftstørrelse og farve på nav-link */
+.navbar .nav-link {
+    font-size: 16px; /* Skift skriftstørrelse her */
+    color: #007bff; /* Skift farve her */
+}
+
+/* Ændrer farve på nav-link ved hover */
+.navbar .nav-link:hover {
+    color: #0056b3; /* Skift hover-farve her */
+}
+
+
 /*
     Om os siden
 */
