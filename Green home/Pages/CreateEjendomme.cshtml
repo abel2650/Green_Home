@@ -1,79 +1,86 @@
 @page
 @model Green_home.Pages.CreateEjendommeModel
-@{    
-    Layout = null; 
-    ViewData["Title"] = "Create New Ejendomme";
+@{
+    Layout = null;
+    ViewData["Title"] = "Tilføj Ejendomme";
 }
+
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - Green home</title>
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-                <div class="container">
-                    <a class="navbar-brand" asp-area="" asp-page="/Index">Green_home</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                            </li>
-                            <li class="nav-item">
-                                 <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
-                            </li>
-                        </ul>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Green Home</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Green_home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="text-center mb-4">Tilføj Ejendomme</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post">
+                    <div class="mb-3">
+                        <label asp-for="Pris" class="form-label">Pris</label>
+                        <input asp-for="Pris" class="form-control" />
+                        <span asp-validation-for="Pris" class="text-danger"></span>
                     </div>
-                </div>
-            </nav>
-        </header>
-        <h1>Tilføj Ejendomme</h1>
-        <div>
-            <form method="post">
 
-                <div class="form-group">
-                    <label asp-for="Pris"></label>
-                    <input asp-for="Pris" class="form-control" />
-                    <span asp-validation-for="Pris" class="text-danger"></span>
-                </div>
+                    <div class="mb-3">
+                        <label asp-for="Energimærke" class="form-label">Energimærke</label>
+                        <input asp-for="Energimærke" class="form-control" />
+                        <span asp-validation-for="Energimærke" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Energimærke"></label>
-                    <input asp-for="Energimærke" class="form-control" />
-                    <span asp-validation-for="Energimærke" class="text-danger"></span>
-                </div>
+                    <div class="mb-3">
+                        <label asp-for="Kvm" class="form-label">Kvm</label>
+                        <input asp-for="Kvm" class="form-control" />
+                        <span asp-validation-for="Kvm" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Kvm"></label>
-                    <input asp-for="Kvm" class="form-control" />
-                    <span asp-validation-for="Kvm" class="text-danger"></span>
-                </div>
+                    <div class="mb-3">
+                        <label asp-for="Post_nr" class="form-label">Post nr.</label>
+                        <input asp-for="Post_nr" class="form-control" />
+                        <span asp-validation-for="Post_nr" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label asp-for="Post_nr"></label>
-                    <input asp-for="Post_nr" class="form-control" />
-                    <span asp-validation-for="Post_nr" class="text-danger"></span>
-                </div>
-                <br />
-                <button type="submit" class="btn btn-success">Create</button>
-            </form>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Tilføj</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

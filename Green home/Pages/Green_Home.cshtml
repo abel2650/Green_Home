@@ -4,6 +4,24 @@
     Layout = null;
     ViewData["Title"] = "Forside";
 }
+
+@using Green_home.Services
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Green_home.Model
+
+@{
+    // Kontroller om en admin er logget ind
+    Admin admin = null;
+    try 
+    { 
+        admin = SessionHelper.Get<Admin>(HttpContext); 
+    }
+    catch 
+    { 
+        // Håndter fejlen hvis der ikke er nogen admin-session
+    }
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,12 +54,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
-                        </li>
+                        @if (admin != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
                         </li>

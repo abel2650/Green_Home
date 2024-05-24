@@ -7,6 +7,22 @@
     ViewData["Title"] = "Ejendomme";
 }
 
+@using Green_home.Services
+
+@{
+    // Kontroller om en admin er logget ind
+    Admin admin = null;
+    try 
+    { 
+        admin = SessionHelper.Get<Admin>(HttpContext); 
+    }
+    catch 
+    { 
+        // Håndter fejlen hvis der ikke er nogen admin-session
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -34,13 +50,19 @@
                         <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeModel">Ejendomme</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
                     </li>
+                    @if (admin != null)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                        </li>
+                    }
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
                     </li>
                 </ul>
             </div>
@@ -54,7 +76,7 @@
                  <input class="form-control form-control-sm mb-2" type="search" placeholder="Energimærke" aria-label="Search" name="searchEnergimærke">
              </div>
              <div class="col">
-                 <input class="form-control form-control-sm mb-2" type="search" placeholder="By ID" aria-label="Search" name="searchBy">
+                 <input class="form-control form-control-sm mb-2" type="search" placeholder="Post Nr" aria-label="Search" name="searchBy">
              </div>
              <div class="col">
                  <button class="btn btn-outline-success btn-sm" type="submit">Søg</button>
