@@ -1,52 +1,124 @@
 ﻿@page
+@model Green_home.Pages.LoginModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Login ind";
+}
 @using Green_home.Services
-@using System.Net
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using Green_home.Model
 
-@model Green_home.Pages.LoginModel
-
 @{
-    Admin a = null!;
+    // Kontroller om en admin er logget ind
+    Ejendomme admin = null!;
     try
     {
-        a = SessionHelper.Get<Admin>(a, HttpContext);
+        admin = SessionHelper.Get<Ejendomme>(admin, HttpContext);
     }
     catch
     {
-        
+        // Håndter fejlen hvis der ikke er nogen admin-session
     }
-    
 }
-<h2 class="text-center">Login</h2>
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        @if (a == null)
-        {
-            <form method="post" asp-page-handler="Login">
-                <div class="mb-3">
-                <label asp-for="Brugernavn" class="form-label"></label>
-                <input type="text" asp-for="Brugernavn" class="form-control form-control-sm"/>
-                <span asp-validation-for="Brugernavn" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                <label asp-for="Kodeord" class="form-label"></label>
-                <input type="password" asp-for="Kodeord" class="form-control form-control-sm"/>
-                <span asp-validation-for="Kodeord" class="text-danger"></span>
-                </div>
-                <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Log ind</button>
-                </div>
-                <p class="text-danger">@Model.ErrMessage</p>
-                </form>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Green Home</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/Green_home.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <img src="~/Images/Skærmbillede 2024-05-17 kl. 16.07.21.png" alt="Green Home Logo" width="65px">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Om os
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-area="" asp-page="/Om_os">Om os</a>
+                                    <a class="dropdown-item" asp-area="" asp-page="/KontaktOs">Kontakt os</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
+                            </li>
+                            @if (admin != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet/Rediger Ejendomme</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CreateAdmin">Opret Admin</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ud</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
+                                </li>
+                            }
 
-                
-        }
-        else
-        {
-            <form method="post" asp-page-handler="Logout">
-                <input type="submit" value="Logud"/>
-            </form>
-        }
-    </div>
-</div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <h2 class="text-center">Login</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                @if (admin == null)
+                {
+                    <form method="post" asp-page-handler="Login">
+                        <div class="mb-3">
+                            <label asp-for="Brugernavn" class="form-label"></label>
+                            <input type="text" asp-for="Brugernavn" class="form-control form-control-sm" />
+                            <span asp-validation-for="Brugernavn" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Kodeord" class="form-label"></label>
+                            <input type="password" asp-for="Kodeord" class="form-control form-control-sm" />
+                            <span asp-validation-for="Kodeord" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Log ind</button>
+                        </div>
+                        <p class="text-danger">@Model.ErrMessage</p>
+                    </form>
+
+
+                }
+                else
+                {
+                    <form method="post" asp-page-handler="Logout">
+                        <input type="submit" value="Logud" />
+                    </form>
+                }
+            </div>
+        </div>
+        <br />
+    </body>
+</html>

@@ -11,10 +11,10 @@
 
 @{
     // Kontroller om en admin er logget ind
-    Admin admin = null;
+    Ejendomme admin = null;
     try
     {
-        admin = SessionHelper.Get<Admin>(admin, HttpContext);
+        admin = SessionHelper.Get<Ejendomme>(admin, HttpContext);
     }
     catch
     {
@@ -47,8 +47,14 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Om os
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-area="" asp-page="/Om_os">Om os</a>
+                                    <a class="dropdown-item" asp-area="" asp-page="/KontaktOs">Kontakt os</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
@@ -59,7 +65,10 @@
                                     <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet/Rediger Ejendomme</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CreateAdmin">Opret Admin</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ud</a>

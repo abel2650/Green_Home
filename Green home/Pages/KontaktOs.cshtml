@@ -11,10 +11,10 @@
 
 @{
     // Kontroller om en admin er logget ind
-    Admin admin = null!;
+    Ejendomme admin = null!;
     try
     {
-        admin = SessionHelper.Get<Admin>(admin, HttpContext);
+        admin = SessionHelper.Get<Ejendomme>(admin, HttpContext);
     }
     catch
     {
@@ -48,8 +48,14 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Green_Home">Green Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Om_os">Om os</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Om os
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" asp-area="" asp-page="/Om_os">Om os</a>
+                                    <a class="dropdown-item" asp-area="" asp-page="/KontaktOs">Kontakt os</a>
+                                </div>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EjendommeSite">Ejendomme</a>
@@ -60,12 +66,14 @@
                                     <a class="nav-link text-dark" asp-area="" asp-page="/CreateEjendomme">Tilføj Ejendom</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet Ejendomme</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/DeleteEjendom">Slet/Rediger Ejendomme</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/CreateAdmin">Opret Admin</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Login">Log ud</a>
                                 </li>
-
                             }
                             else
                             {
@@ -73,44 +81,30 @@
                                     <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
                                 </li>
                             }
+
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <div class="hero-section text-center">
-            <h1 class="display-4">Kontakt os</h1>
-
-        </div>
+        <h2 class="text-center">Kontakt Os</h2>
+    <p class="text-center">Her kan du finde kontaktoplysninger på vores team. Tøv ikke med at tage kontakt til en af vores dygtige mæglere, hvis du har spørgsmål eller brug for assistance.</p>
         <div class="container mt-5">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Rebin</h4>
-                            <p class="card-text">Rådgiver</p>
+                @foreach (var adminItem in Model.AdminList)
+                {
+                    <div class="col-md-2 mb-4">
+                        <div class="card">
+                            <img class="KontaktOsFoto card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <span>@adminItem.Navn @adminItem.Efternavn</span>
+                                </h4>
+                                <p class="card-text">@adminItem.Tlf_nr</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Mathias</h4>
-                            <p class="card-text">Founder af Green Home</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="Images/GenderNeutral Placeholder Photo.png" alt="Card image">
-                        <div class="card-body">
-                            <h4 class="card-title">Marcus</h4>
-                            <p class="card-text">CO-Founder af Green Home og IT-Supporter</p>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
         <br />

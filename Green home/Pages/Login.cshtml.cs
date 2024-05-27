@@ -26,7 +26,7 @@ namespace Green_home.Pages
         {
         }
 
-        public IActionResult OnPostLogin()
+        public IActionResult OnPost()
         {
             // Fjern ErrMessage fra ModelState for at undgå valideringsproblemer
             ModelState.Remove("ErrMessage");
@@ -65,17 +65,6 @@ namespace Green_home.Pages
                 ErrMessage = "Der opstod en fejl under login. Prøv venligst igen senere.";
                 return Page();
             }
-        }
-
-        public IActionResult OnPostLogout()
-        {
-            // Fjern admin-data fra session
-            Admin a = null!;
-            a = SessionHelper.Get<Admin>(a, HttpContext);
-            SessionHelper.Clear<Admin>(a, HttpContext);
-
-            // Redirect til forsiden eller login siden
-            return RedirectToPage("/Green_Home");
         }
     }
 }

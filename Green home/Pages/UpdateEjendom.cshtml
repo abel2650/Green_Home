@@ -10,10 +10,10 @@
 @using Green_home.Model
 
 @{
-    Admin admin = null;
+    Ejendomme admin = null;
     try
     {
-        admin = SessionHelper.Get<Admin>(admin, HttpContext);
+        admin = SessionHelper.Get<Ejendomme>(admin, HttpContext);
     }
     catch
     {

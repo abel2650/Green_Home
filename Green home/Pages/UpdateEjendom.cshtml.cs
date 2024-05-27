@@ -19,8 +19,8 @@ namespace Green_home.Pages
 
         public IActionResult OnGet(int id)
         {
-            Admin admin = null;
-            try { admin = SessionHelper.Get<Admin>(admin, HttpContext); }
+            Ejendomme admin = null;
+            try { admin = SessionHelper.Get<Ejendomme>(admin, HttpContext); }
             catch { return RedirectToPage("/Green_Home"); }
 
             Ejendom = _ejendommeRepository.GetAll().FirstOrDefault(e => e.Id == id);

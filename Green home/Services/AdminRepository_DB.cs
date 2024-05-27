@@ -10,6 +10,33 @@ namespace Green_home.Services
 
         }
 
+        public List<Admin> GetAll()
+        {
+            string query = "SELECT * FROM Mægler_Admin";
+
+            List<Admin> AdminList = new List<Admin>();
+
+            // Opretter forbindelse til databasen.
+            using (SqlConnection connection = new SqlConnection(Secret.ConnectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                // Læser resultaterne fra databasen og opretter adminobjekter.
+                while (reader.Read())
+                {
+                    Admin admin = ReadAdmin(reader);
+                    AdminList.Add(admin);
+                }
+
+                connection.Close();
+            }
+            // Returnerer listen over admin.
+            return AdminList;
+        }
         public Admin ReadLogin(string username, string password)
         {
             Admin admin = null!;
@@ -55,6 +82,17 @@ namespace Green_home.Services
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        private Admin ReadAdmin(SqlDataReader reader)
+        {
+            Admin a = new Admin();
+            a.Admin_Id = reader.GetInt32(0);
+            a.Navn = reader.GetString(1);
+            a.Efternavn = reader.GetString(2);
+            a.Tlf_nr = reader.GetInt32(3);
+            a.Username = reader.GetString(4);
+            a.Password = reader.GetString(5);
+            return a;
         }
     }
 }
