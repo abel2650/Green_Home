@@ -2,6 +2,7 @@ using Green_home.Model;
 using Green_home.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
 namespace Green_home.Pages
 {
@@ -65,6 +66,17 @@ namespace Green_home.Pages
                 ErrMessage = "Der opstod en fejl under login. Prøv venligst igen senere.";
                 return Page();
             }
+        }
+
+        public IActionResult OnPostLogout()
+        {
+            // Fjern admin-data fra session
+            Admin a = null!;
+            a = SessionHelper.Get<Admin>(a, HttpContext);
+            SessionHelper.Clear<Admin>(a, HttpContext);
+
+            // Redirect til forsiden eller login siden
+            return RedirectToPage("/Green_Home");
         }
     }
 }
