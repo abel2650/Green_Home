@@ -88,31 +88,31 @@
         </nav>
     </header>
     <div class="container mt-5">
-        <h1>Opret Ejendom</h1>
+        <h2>Opret Ejendom</h2>
         <p>Udfyld formularen for at oprette en ny ejendom i systemet.</p>
 
         <form method="post">
             <div class="form-group">
                 <label for="Pris">Pris:</label>
-                <input type="number" class="form-control" asp-for="Pris" />
+                <input type="number" class="form-control" asp-for="Pris" placeholder="Indtast prisen på ejendommen" />
                 <span asp-validation-for="Pris" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
                 <label for="Kvm">Kvadratmeter:</label>
-                <input type="number" class="form-control" asp-for="Kvm" />
+                <input type="number" class="form-control" asp-for="Kvm" placeholder="Indtast kvadratmeter størrelsen på ejendommen" />
                 <span asp-validation-for="Kvm" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
                 <label for="Energimærke">Energimærke:</label>
-                <input type="text" class="form-control" asp-for="Energimærke" />
+                <input type="text" class="form-control" asp-for="Energimærke" placeholder="Indtast energimærket på ejendommen" />
                 <span asp-validation-for="Energimærke" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
                 <label for="Post_nr">Post nr:</label>
-                <input type="number" class="form-control" asp-for="Post_nr" />
+                <input type="number" class="form-control" asp-for="Post_nr" placeholder="Indtast postnummeret på ejendommen" />
                 <span asp-validation-for="Post_nr" class="text-danger"></span>
             </div>
             <br />
