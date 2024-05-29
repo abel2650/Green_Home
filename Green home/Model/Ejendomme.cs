@@ -4,11 +4,11 @@ namespace Green_home.Model
     public class Ejendomme
     {
         // Private felter der repræsenterer attributterne for en ejendom.
-        // private int _id;
-        // private float _pris;
-        // private int _kvm;
-        // private string _energimærke;
-        // private int _by_id;
+        //private int _id;
+        //private float _pris;
+        //private int _kvm;
+        //private string _energimærke;
+        //private int _post_nr;
 
         // Konstruktør til at initialisere et ejendomsobjekt med givne værdier.
         public Ejendomme(int id, double pris, int kvm, string energimærke, int post_nr)
@@ -24,11 +24,11 @@ namespace Green_home.Model
         public Ejendomme() :this(1, 150, 10, "dummy", 1){}
 
         // Offentlige egenskaber der repræsenterer attributterne for en ejendom med getters og setters.
-        public int Id   {get;  set;}              // Unik identifikator for ejendommen.
+        public int Id { get;   set; }             // Unik identifikator for ejendommen.
         public double Pris   {get;   set;}         // Pris for ejendommen.
         public int Kvm  {get;   set;}             // Størrelse af ejendommen i kvadratmeter.
         public string Energimærke   {get;   set;} // Energimærke for ejendommen.
-        public int Post_nr    {get;   set;}       // Postnummer for ejendommens beliggenhed.
+        public int Post_nr  {get;   set;}
         
         public override string ToString()
         {

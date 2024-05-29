@@ -34,7 +34,7 @@ namespace Green_home.Model
             Password = password;
         }
 
-        public Admin() : this(1, "", "", 11223344, "", "")
+        public Admin()
         {
 
         }

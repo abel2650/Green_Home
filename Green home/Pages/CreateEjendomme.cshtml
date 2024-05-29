@@ -87,41 +87,37 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <h1 class="text-center mb-4">Tilføj Ejendomme</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form method="post">
-                    <div class="mb-3">
-                        <label asp-for="Pris" class="form-label">Pris</label>
-                        <input asp-for="Pris" class="form-control" />
-                        <span asp-validation-for="Pris" class="text-danger"></span>
-                    </div>
+    <div class="container mt-5">
+        <h1>Opret Ejendom</h1>
+        <p>Udfyld formularen for at oprette en ny ejendom i systemet.</p>
 
-                    <div class="mb-3">
-                        <label asp-for="Energimærke" class="form-label">Energimærke</label>
-                        <input asp-for="Energimærke" class="form-control" />
-                        <span asp-validation-for="Energimærke" class="text-danger"></span>
-                    </div>
-
-                    <div class="mb-3">
-                        <label asp-for="Kvm" class="form-label">Kvm</label>
-                        <input asp-for="Kvm" class="form-control" />
-                        <span asp-validation-for="Kvm" class="text-danger"></span>
-                    </div>
-
-                    <div class="mb-3">
-                        <label asp-for="Post_nr" class="form-label">Post nr.</label>
-                        <input asp-for="Post_nr" class="form-control" />
-                        <span asp-validation-for="Post_nr" class="text-danger"></span>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-success">Tilføj</button>
-                    </div>
-                </form>
+        <form method="post">
+            <div class="form-group">
+                <label for="Pris">Pris:</label>
+                <input type="number" class="form-control" asp-for="Pris" />
+                <span asp-validation-for="Pris" class="text-danger"></span>
             </div>
-        </div>
+            <br />
+            <div class="form-group">
+                <label for="Kvm">Kvadratmeter:</label>
+                <input type="number" class="form-control" asp-for="Kvm" />
+                <span asp-validation-for="Kvm" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="Energimærke">Energimærke:</label>
+                <input type="text" class="form-control" asp-for="Energimærke" />
+                <span asp-validation-for="Energimærke" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label for="Post_nr">Post nr:</label>
+                <input type="number" class="form-control" asp-for="Post_nr" />
+                <span asp-validation-for="Post_nr" class="text-danger"></span>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Tilføj</button>
+        </form>
     </div>
 </body>
 </html>

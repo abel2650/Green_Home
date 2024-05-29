@@ -87,38 +87,39 @@
             </nav>
         </header>
         <tbody>
-            <div class="row">
-                @foreach (var ejendom in Model.Ejendomme)
-                {
-                    <div class="col-md-6 mb-4">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="Images/House placeholder foto.png" class="img-fluid rounded-start" alt="Ejendom Billede">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <tr>
-                                            <h5 class="card-text">Pris: @ejendom.Pris kr.</h5>
-                                            <p class="card-text">Kvm: @ejendom.Kvm</p>
-                                            <p class="card-text">Post nr.: @ejendom.Post_nr</p>
-                                            <h6 class="card-text">Energimærke: @ejendom.Energimærke</h6>
-                                            <td>
-                                                <form method="post" asp-page-handler="Delete" asp-route-id="@ejendom.Id">
-                                                    <button type="submit" class="btn btn-danger">Slet</button>
-                                                </form>
-                                                <br/>
-                                                <a asp-page="/UpdateEjendom" asp-route-id="@ejendom.Id" class="btn btn-primary">Opdater</a>
-                                            </td>
-                                        </tr>
+            <div class="container mt-3">
+                <div class="row">
+                    @foreach (var ejendom in Model.Ejendomme)
+                    {
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="Images/House placeholder foto.png" class="img-fluid rounded-start" alt="Ejendom Billede">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <tr>
+                                                <h5 class="card-text">Pris: @ejendom.Pris kr.</h5>
+                                                <p class="card-text">Kvm: @ejendom.Kvm</p>
+                                                <p class="card-text">Post nr.: @ejendom.Post_nr</p>
+                                                <h6 class="card-text">Energimærke: @ejendom.Energimærke</h6>
+                                                <td>
+                                                    <form method="post" asp-page-handler="Delete" asp-route-id="@ejendom.Id">
+                                                        <button type="submit" class="btn btn-danger">Slet</button>
+                                                    </form>
+                                                    <br/>
+                                                    <a asp-page="/UpdateEjendom" asp-route-id="@ejendom.Id" class="btn btn-primary">Opdater</a>
+                                                </td>
+                                            </tr>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
-        </tbody>
-        
+        </tbody>        
     </body>
 </html>
